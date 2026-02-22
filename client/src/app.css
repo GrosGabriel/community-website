@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+
+@import "@skeletonlabs/skeleton";
+@import "@skeletonlabs/skeleton-svelte";
+@import "@skeletonlabs/skeleton/themes/cerberus";
+
+
+@layer base {
+    html[data-mode="light"], :root {
+
+        --color-header: #43290e ;
+        --color-bg-btn: #4A2C2A;
+        --color-text-btn: #FFF7F2;
+        --color-hover-bg-btn: #3B2321;
+        --color-hover-text-btn: #FFF7F2;
+
+        --color-bg-post: #FFFFFF;
+        --color-title: #4A2C2A;
+
+        --color-bg-tile-upvote: #F0E6D2;
+        --color-bg-tile-downvote: #F0E6D2;
+        --color-bg-tile-comment: #F0E6D2;
+        --color-text-tile-upvote: #4A2C2A;
+        --color-text-tile-downvote: #4A2C2A;
+        --color-text-tile-comment: #4A2C2A;
+
+        --color-bg-upvote: #4CAF50;
+        --color-bg-downvote: #e7b432;
+        --color-text-upvote: #2E7D32;
+        --color-text-downvote: #C62828;
+        --color-hover-bg-upvote: #45A049;
+        --color-hover-bg-downvote: #d6a12c;
+        --color-hover-text-upvote: #FFF7F2;
+        --color-hover-text-downvote: #FFF7F2;
+
+        --color-border-success: #4CAF50;
+        --color-bg-success: #E8F5E9;
+        --color-text-success: #2E7D32;
+        --color-border-error: #F44336;
+        --color-bg-error: #FFEBEE;
+        --color-text-error: #C62828;
+
+        --color-bg-input: oklch(0.94 0.01 255);
+        --color-text-input: #4A2C2A;
+        --color-placeholder-input: #8B8B8B;
+        --color-focus-border-input: #4A2C2A;
+
+        --color-text: oklch(0.22 0.02 255);
+        --color-muted: oklch(0.51 0.02 255);
+        --color-bg-muted: oklch(0.94 0.01 255);
+        --color-border: oklch(0.86 0.01 255);
+        --color-background: oklch(0.97 0.01 255);
+
+        --color-text-remove: #C62828;
+        --color-bg-remove: #FFEBEE;
+        --color-hover-text-remove: #FFF7F2;
+        --color-hover-bg-remove: #F44336;
+        --color-border-remove: #C62828;
+
+        --font-karla: "Karla", system-ui, sans-serif;
+        --font-fraunces: "Fraunces", serif;
+
+    }
+
+    
+    html[data-mode="dark"] {
+        --color-header: #EAD2B8;
+        --color-bg-btn: #3B2321;
+        --color-text-btn: #FFF7F2;
+        --color-hover-bg-btn: #4A2C2A;
+        --color-hover-text-btn: #FFF7F2;
+
+        --color-bg-post: oklch(0.15 0.01 280); 
+        --color-title: #EAD2B8;
+
+        --color-bg-tile-upvote: oklch(0.20 0.05 120);
+        --color-bg-tile-downvote: oklch(0.25 0.10 60);
+        --color-bg-tile-comment: oklch(0.20 0.01 255);
+        --color-text-tile-upvote: #DFF3E4;
+        --color-text-tile-downvote: #FFD78C;
+        --color-text-tile-comment: #EAD2B8;
+
+        --color-bg-upvote: #45A049;
+        --color-bg-downvote: #d6a12c;
+        --color-text-upvote: #DFF3E4;
+        --color-text-downvote: #FFD78C;
+        --color-hover-bg-upvote: #4CAF50;
+        --color-hover-bg-downvote: #e7b432;
+        --color-hover-text-upvote: #FFF7F2;
+        --color-hover-text-downvote: #FFF7F2;
+
+        --color-border-success: #4CAF50;
+        --color-bg-success: oklch(0.22 0.10 150);
+        --color-text-success: #DFF3E4;
+        --color-border-error: #F44336;
+        --color-bg-error: oklch(0.30 0.10 25);
+        --color-text-error: #FFD78C;
+
+        --color-bg-input: oklch(0.20 0.01 280);
+        --color-text-input: #EAD2B8;
+        --color-placeholder-input: #8B8B8B;
+        --color-focus-border-input: #EAD2B8;
+
+        --color-text: oklch(0.85 0.02 255);
+        --color-muted: oklch(0.60 0.02 255);
+        --color-bg-muted: oklch(0.18 0.01 255);
+        --color-border: oklch(0.45 0.01 255);
+        --color-background: oklch(0.12 0.01 280);
+
+        --color-text-remove: #FFD78C;
+        --color-bg-remove: oklch(0.25 0.05 25);
+        --color-hover-text-remove: #FFF7F2;
+        --color-hover-bg-remove: #F44336;
+        --color-border-remove: #FFD78C;
+
+        --font-karla: "Karla", system-ui, sans-serif;
+        --font-fraunces: "Fraunces", serif;
+    }
+
+    html,
+    body {
+        background-color: var(--color-background);
+    }
+}
+
+@theme {
+
+    
+    --color-header: var(--color-header);
+    --color-bg-btn: var(--color-bg-btn);
+    --color-text-btn: var(--color-text-btn);
+    --color-hover-bg-btn: var(--color-hover-bg-btn);
+    --color-hover-text-btn: var(--color-hover-text-btn);
+
+    --color-bg-post: var(--color-bg-post);
+    --color-title: var(--color-title);
+
+    --color-bg-tile-upvote: var(--color-bg-tile-upvote);
+    --color-bg-tile-downvote: var(--color-bg-tile-downvote);
+    --color-bg-tile-comment: var(--color-bg-tile-comment);
+    --color-text-tile-upvote: var(--color-text-tile-upvote);
+    --color-text-tile-downvote: var(--color-text-tile-downvote);
+    --color-text-tile-comment: var(--color-text-tile-comment);
+
+    --color-bg-upvote: var(--color-bg-upvote);
+    --color-bg-downvote: var(--color-bg-downvote);
+    --color-text-upvote: var(--color-text-upvote);
+    --color-text-downvote: var(--color-text-downvote);
+    --color-hover-bg-upvote: var(--color-hover-bg-upvote);
+    --color-hover-bg-downvote: var(--color-hover-bg-downvote);
+    --color-hover-text-upvote: var(--color-hover-text-upvote);
+    --color-hover-text-downvote: var(--color-hover-text-downvote);
+
+    --color-border-success: var(--color-border-success);
+    --color-bg-success: var(--color-bg-success);
+    --color-text-success: var(--color-text-success);
+    --color-border-error: var(--color-border-error);
+    --color-bg-error: var(--color-bg-error);
+    --color-text-error: var(--color-text-error);
+
+    --color-bg-input: var(--color-bg-input);
+    --color-text-input: var(--color-text-input);
+    --color-placeholder-input: var(--color-placeholder-input);
+    --color-focus-border-input: var(--color-focus-border-input);
+
+    --color-bg-muted: var(--color-bg-muted);
+
+    --color-text-remove: var(--color-text-remove);
+    --color-bg-remove: var(--color-bg-remove);
+    --color-hover-text-remove: var(--color-hover-text-remove);
+    --color-hover-bg-remove: var(--color-hover-bg-remove);
+    --color-border-remove: var(--color-border-remove);
+    --color-border: var(--color-border);
+    --color-text: var(--color-text);
+    --color-muted: var(--color-muted);
+
+    --font-karla: var(--font-karla);
+    --font-fraunces: var(--font-fraunces);
+
+}

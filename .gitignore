@@ -1,0 +1,22 @@
+# Environment files
+.env
+.env.*
+project.env
+
+# Node
+node_modules/
+
+# Docker volumes
+pgdata/
+
+# Build output
+.output
+.vercel
+.netlify
+.wrangler
+.svelte-kit
+build
+
+# OS
+.DS_Store
+Thumbs.db
