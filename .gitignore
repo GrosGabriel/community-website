@@ -3,6 +3,9 @@
 .env.*
 project.env
 
+
+.txt
+
 # Node
 node_modules/
 
