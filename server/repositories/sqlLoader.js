@@ -6,8 +6,14 @@ if (!databaseUrl) {
   throw new Error("DATABASE_URL is not defined");
 }
 
-export const sql = postgres(databaseUrl, {
+const url = new URL(databaseUrl);
+
+export const sql = postgres({
+  host: url.hostname,
+  port: parseInt(url.port) || 5432,
+  database: url.pathname.slice(1),
+  username: url.username,
+  password: url.password,
   ssl: { rejectUnauthorized: false },
-  connectionTimeout: 10000, // 10 secondes
-  idleTimeout: 60000        // 60 secondes
+  connect_timeout: 10,
 });
