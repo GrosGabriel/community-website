@@ -1,6 +1,12 @@
 import * as jwt from "@hono/hono/jwt";
 
-const JWT_SECRET = "jwt_secret";
+const JWT_SECRET = Deno.env.get("JWT_SECRET");
+
+if (!JWT_SECRET) {
+  throw new Error("JWT_SECRET is not defined");
+}
+
+
 
 const authenticate = async (c, next) => {
   const authHeader = c.req.header("Authorization");
