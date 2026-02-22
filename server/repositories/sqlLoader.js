@@ -8,6 +8,10 @@ if (!databaseUrl) {
 
 const url = new URL(databaseUrl);
 
+console.log("DB HOST:", url.hostname);
+console.log("DB PORT:", url.port);
+console.log("DB NAME:", url.pathname.slice(1));
+
 export const sql = postgres({
   host: url.hostname,
   port: parseInt(url.port) || 5432,
