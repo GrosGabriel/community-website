@@ -4,7 +4,7 @@
 project.env
 
 
-.txt
+*.txt
 
 # Node
 node_modules/
