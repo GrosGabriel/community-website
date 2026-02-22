@@ -6,4 +6,4 @@ if (!databaseUrl) {
   throw new Error("DATABASE_URL is not defined");
 }
 
-export const sql = postgres(databaseUrl);
+export const sql = postgres(databaseUrl, {ssl: "require"});
