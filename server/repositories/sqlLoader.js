@@ -6,18 +6,24 @@ if (!databaseUrl) {
   throw new Error("DATABASE_URL is not defined");
 }
 
-const url = new URL(databaseUrl);
+// const url = new URL(databaseUrl);
 
-console.log("DB HOST:", url.hostname);
-console.log("DB PORT:", url.port);
-console.log("DB NAME:", url.pathname.slice(1));
 
-export const sql = postgres({
-  host: url.hostname,
-  port: parseInt(url.port) || 5432,
-  database: url.pathname.slice(1),
-  username: url.username,
-  password: url.password,
+export const sql = postgres(databaseUrl, {
   ssl: false,
   connect_timeout: 10,
 });
+
+// console.log("DB HOST:", url.hostname);
+// console.log("DB PORT:", url.port);
+// console.log("DB NAME:", url.pathname.slice(1));
+
+// export const sql = postgres({
+//   host: url.hostname,
+//   port: parseInt(url.port) || 5432,
+//   database: url.pathname.slice(1),
+//   username: url.username,
+//   password: url.password,
+//   ssl: false,
+//   connect_timeout: 10,
+// });
