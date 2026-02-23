@@ -18,6 +18,6 @@ export const sql = postgres({
   database: url.pathname.slice(1),
   username: url.username,
   password: url.password,
-  ssl: { rejectUnauthorized: false },
+  ssl: false,
   connect_timeout: 10,
 });
